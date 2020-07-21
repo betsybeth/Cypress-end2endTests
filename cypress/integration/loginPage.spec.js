@@ -30,7 +30,10 @@ describe("Verify all elements in the LoginPage are displayed", () => {
 
          cy.get("#username").should("have.attr", "placeholder", "Enter your username")
          cy.get("#password").should("have.attr", "placeholder", "Enter your password")
+    })
 
+    it("verify all input fields are entered ", () => {
+        cy.get("#username").should()
     })
 })
 
