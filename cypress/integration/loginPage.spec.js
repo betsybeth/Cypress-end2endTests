@@ -8,6 +8,7 @@ describe("Verify all elements in the LoginPage are displayed", () => {
     it("Login Page" ,  () => {     
         cy.get("#username").type("betsy")
         cy.get("#password").type("betsy")
+        cy.get(".form-check-input").click()
         cy.get("#log-in").click()
         cy.request({
             url: 'https://demo.applitools.com/hackathonApp.html',
@@ -32,9 +33,23 @@ describe("Verify all elements in the LoginPage are displayed", () => {
          cy.get("#password").should("have.attr", "placeholder", "Enter your password")
     })
 
-    it("verify all input fields are entered ", () => {
-        cy.get("#username").should()
+    it("verify all login fields are present", () => {
+
+        cy.get("#username").should("have.value", "")
+        cy.get(".os-icon-user-male-circle:nth-child(3)").should("be.visible")
+        cy.get(".os-icon-fingerprint:nth-child(3)").should("be.visible")
+        cy.get(".logo-w > a:nth-child(1) > img:nth-child(1)").should("be.visible")
+        // cy.get(".auth-header")
+        //    .should("be.have.text", "\n   Login Form\n  ")
+        //    .should("be.visible")
+        cy.get("a:nth-child(2) > img:nth-child(1)").should("have.attr", "src", "img/social-icons/facebook.png")
+        cy.get("a:nth-child(3) > img:nth-child(1)").should("have.attr", "src", "img/social-icons/linkedin.png")
+        cy.get("div:nth-child(3) a:nth-child(1) > img:nth-child(1)").should("have.attr", "src", "img/social-icons/twitter.png")
+
+        
     })
 })
+
+
 
 
