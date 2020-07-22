@@ -48,6 +48,16 @@ describe("Verify all elements in the LoginPage are displayed", () => {
 
         
     })
+
+    it("Verify empty input fields are not allowed" , () => {
+        cy.get("#username").type("betsy{enter}", ).clear()
+        cy.get("#random_id_4").should("be.have.text", "Username must be present")
+
+        // cy.get("#username").type("{enter}" ,{force: true})  
+        
+
+        
+    })
 })
 
 
