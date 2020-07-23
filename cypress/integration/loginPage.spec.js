@@ -39,9 +39,9 @@ describe("Verify all elements in the LoginPage are displayed", () => {
         cy.get(".os-icon-user-male-circle:nth-child(3)").should("be.visible")
         cy.get(".os-icon-fingerprint:nth-child(3)").should("be.visible")
         cy.get(".logo-w > a:nth-child(1) > img:nth-child(1)").should("be.visible")
-        // cy.get(".auth-header")
-        //    .should("be.have.text", "\n   Login Form\n  ")
-        //    .should("be.visible")
+        cy.get(".auth-header")
+           .should("be.have.text", '\n        Login Form\n      ')
+           .should("be.visible")
         cy.get("a:nth-child(2) > img:nth-child(1)").should("have.attr", "src", "img/social-icons/facebook.png")
         cy.get("a:nth-child(3) > img:nth-child(1)").should("have.attr", "src", "img/social-icons/linkedin.png")
         cy.get("div:nth-child(3) a:nth-child(1) > img:nth-child(1)").should("have.attr", "src", "img/social-icons/twitter.png")
@@ -50,9 +50,10 @@ describe("Verify all elements in the LoginPage are displayed", () => {
     })
 
     it("Verify empty input fields are not allowed" , () => {
-        cy.get("#username").type("betsy{enter}", ).clear()
+        cy.get("#username").type("betsy", ).clear()
+        cy.get("#password").type("betsy")
+        cy.get("#log-in").click()
         cy.get("#random_id_4").should("be.have.text", "Username must be present")
-
         // cy.get("#username").type("{enter}" ,{force: true})  
         
 
