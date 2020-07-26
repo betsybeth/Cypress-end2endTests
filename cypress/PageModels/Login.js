@@ -14,12 +14,13 @@ const loginElements = {
     facebookIconElement : () => cy.get("a:nth-child(2) > img:nth-child(1)"),
     twitterIconElement : () => cy.get("div:nth-child(3) a:nth-child(1) > img:nth-child(1)"),
     linkedinIconElement : () => cy.get("a:nth-child(3) > img:nth-child(1)"),
-    loginFormHeaderElement: () => cy.get(".auth-header")
-
+    loginFormHeaderElement: () => cy.get(".auth-header"),
+   inputAlertWarningMesaage: () => cy.get('.alert-warning')
 
 
  
 }
+
 
 export { loginElements }
 
