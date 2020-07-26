@@ -6,37 +6,62 @@ describe("Verify all elements in the loginPage are displayed", () => {
     beforeEach(() =>  {
         cy.visit("https://demo.applitools.com/hackathon.html")
     })
-    it("Verify labels are displayed", () => {
+    it("Verify username label is displayed", () => {
          loginElements.usernameLabelElement()
          .should("be.have.text", "Username")
          .should("be.visible")
 
-         loginElements.passwordLabelElement()
-         .should("be.have.text", "Password")
-         .should("be.visible")
-         
-         loginElements.rememberLabelElement()
+    }) 
+
+    it("Verify password label is displayed", () => {
+        loginElements.passwordLabelElement()
+        .should("be.have.text", "Password")
+        .should("be.visible")
+    })
+
+    it("verify rememeber me label is displayed", ()=>{
+        loginElements.rememberLabelElement()
          .should("be.have.text", "Remember Me")
          .should("be.visible")
+    }) 
 
-         loginElements.userNameInputElement().should("have.attr", "placeholder", "Enter your username")
-         loginElements.passwordInputElement().should("have.attr", "placeholder", "Enter your password")
+    it("verify username placeholder is accurate", () => {
+        loginElements.userNameInputElement().should("have.attr", "placeholder", "Enter your username")
     })
 
-    it("verify all login fields are present", () => {
-
+    it("verify username placeholder is accurate", () => {
+        loginElements.passwordInputElement().should("have.attr", "placeholder", "Enter your password")
+    })
+          
+    it ("verify the username icon is displayed", ()=> {
         loginElements.usernameIconElement().should("be.visible")
-        loginElements.passwordIconElement().should("be.visible")
-        loginElements.logoImageElement().should("be.visible")
-        loginElements.loginFormHeaderElement()
-           .should("be.have.text", '\n        Login Form\n      ')
-           .should("be.visible")
-       loginElements.facebookIconElement().should("have.attr", "src", "img/social-icons/facebook.png")
-       loginElements.linkedinIconElement().should("have.attr", "src", "img/social-icons/linkedin.png")
-       loginElements.twitterIconElement().should("have.attr", "src", "img/social-icons/twitter.png")
-        
     })
 
+    it ("verify the password  icon is displayed", ()=> {
+        loginElements.passwordIconElement().should("be.visible")
+    })
+
+    it ("verify the  logo image  is displayed", ()=> {
+        loginElements.logoImageElement().should("be.visible")
+    })
+
+    it("verify the header title is displayed" , () => {
+        loginElements.loginFormHeaderElement()
+        .should("be.have.text", '\n        Login Form\n      ')
+        .should("be.visible")
+    })
+
+    it("verify the facebook icon is displayed", () => {
+        loginElements.facebookIconElement().should("have.attr", "src", "img/social-icons/facebook.png")
+    })
+
+    it("verify the twitter icon is displayed", () => {
+        loginElements.linkedinIconElement().should("have.attr", "src", "img/social-icons/linkedin.png")
+    })
+
+    it("verify the linkedin icon is displayed ", () => {
+        loginElements.twitterIconElement().should("have.attr", "src", "img/social-icons/twitter.png")
+    })
 })
 
 describe("Data-driven Tests", () => {
