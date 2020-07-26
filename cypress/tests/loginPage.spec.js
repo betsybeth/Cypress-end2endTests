@@ -1,5 +1,5 @@
 /// <reference  types="cypress" />
-import   { loginElements }   from "../PageModels/Login"
+import   { loginElements, login }   from "../PageModels/Login"
 
 
 describe("Verify all elements in the loginPage are displayed", () => { 
@@ -42,9 +42,9 @@ describe("Verify all elements in the loginPage are displayed", () => {
 describe("Data-driven Tests", () => {
     beforeEach(() => cy.visit("https://demo.applitools.com/hackathon.html"))
 
-     it("Validate Loggin into ACME demo App" ,  () => { 
-        loginElements.userNameInputElement().type("test")
-        loginElements.passwordInputElement().type("betsy")
+     it("Validate Logging into ACME demo App is successful" ,  () => { 
+        loginElements.userNameInputElement().type("betsy")
+        loginElements.passwordInputElement().type("password")
         loginElements.checkboxElement().click()
         loginElements.loginButtonElement().click()
         cy.request({
@@ -55,7 +55,30 @@ describe("Data-driven Tests", () => {
         })
 
     })
+    it("Validate empty username input throws an alert warning", () => {
+        loginElements.passwordInputElement().type("password")
+        loginElements.checkboxElement().click()
+        loginElements.loginButtonElement().click()
+        loginElements.inputAlertWarningMesaage().should("have.text", "Username must be present")
+
+    })
+    it("Validate empty password input throws an alert warning", () => {
+        loginElements.userNameInputElement().type("text")
+        loginElements.checkboxElement().click()
+        loginElements.loginButtonElement().click()
+        loginElements.inputAlertWarningMesaage().should("have.text", "Password must be present")
+
+    })
+    it("Validate empty password and username input throws an alert warning", () => {
+        loginElements.checkboxElement().click()
+        loginElements.loginButtonElement().click()
+        loginElements.inputAlertWarningMesaage().should("have.text", "Both Username and Password must be present ")
+    })
+
+    
 }) 
+
+
 
 
 
