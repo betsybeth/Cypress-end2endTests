@@ -15,7 +15,18 @@ const loginElements = {
     twitterIconElement : () => cy.get("div:nth-child(3) a:nth-child(1) > img:nth-child(1)"),
     linkedinIconElement : () => cy.get("a:nth-child(3) > img:nth-child(1)"),
     loginFormHeaderElement: () => cy.get(".auth-header"),
-   inputAlertWarningMesaage: () => cy.get('.alert-warning')
+   inputAlertWarningMesaage: () => cy.get('.alert-warning'),
+   amountHeaderSelector: () => cy.get("#amount"),
+   ebayDescriptionSelector: () => cy.get("span").contains("Ebay Marketplace"),
+   mailChimpDescriptionSelector: () => cy.get("span").contains("MailChimp Services"),
+   shopifyDescriptionSelector: () => cy.get("span").contains("Shopify product"),
+   templatesDescriptionSelector: () => cy.get("span").contains("Templates Inc"),
+   sripeDescriptionSelector: () => cy.get("span").contains("Stripe Payment Processing"),
+   startBucksDescriptionSelector: () => cy.get("span").contains("Starbucks coffee"),
+   transactionalTableSelector:() => cy.get("#transactionsTable")
+
+
+
 
 
  
