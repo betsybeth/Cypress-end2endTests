@@ -1,5 +1,5 @@
 /// <reference  types="cypress" />
-import   { loginElements, login }   from "../PageModels/Login"
+import   { loginElements }   from "../PageModels/Login"
 
 
 describe("Verify all elements in the loginPage are displayed", () => { 
