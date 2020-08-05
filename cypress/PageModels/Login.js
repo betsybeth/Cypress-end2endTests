@@ -23,7 +23,11 @@ const loginElements = {
    templatesDescriptionSelector: () => cy.get("span").contains("Templates Inc"),
    sripeDescriptionSelector: () => cy.get("span").contains("Stripe Payment Processing"),
    startBucksDescriptionSelector: () => cy.get("span").contains("Starbucks coffee"),
-   transactionalTableSelector:() => cy.get("#transactionsTable")
+   transactionalTableSelector:() => cy.get("#transactionsTable"),
+   totalBalanceDivSelector: () => cy.get("#totalBalance"),
+   creditAvailableSelector : () => cy.get("#creditAvailable"),
+   dueTodaySelector: () => cy.get(".balance")
+   
    
 
 
