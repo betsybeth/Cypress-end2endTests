@@ -24,6 +24,7 @@ const loginElements = {
    sripeDescriptionSelector: () => cy.get("span").contains("Stripe Payment Processing"),
    startBucksDescriptionSelector: () => cy.get("span").contains("Starbucks coffee"),
    transactionalTableSelector:() => cy.get("#transactionsTable")
+   
 
 
 
