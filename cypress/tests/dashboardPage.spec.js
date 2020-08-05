@@ -38,7 +38,7 @@ describe("Canavas Tests", () => {
         }).then((resp)  => {
             expect(resp.status).to.eql(200)
         })
-        //  Unable to test the canvas chart since the elements are not available in the DOM element
+        //  Unable to test the canvas chart since the elements are not available in the DOM.
     })
 })
 
