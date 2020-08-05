@@ -12,12 +12,19 @@ describe("Table Sorting ", () => {
     })
 
     it(("validate the values in the table are in correct order"), () => {
-          loginElements.transactionalTableSelector().within(() => {
-              cy.get("tr").should("have.length", 7)
-              loginElements.amountHeaderSelector().click()
-              cy.get("tbody > :nth-child(1)").should("be.visible")
-              
-          })
+     
+        loginElements.transactionalTableSelector().within(() => {
+            cy.get("tr").should("have.length", 7)
+            loginElements.amountHeaderSelector().click()
+            cy.get("tbody > :nth-child(1)").should("be.visible")
+            const transaction = (amount) => {
+                return _.map(amont => {
+                    
+                })
+            }
+
+            
+        })
 
           
                
