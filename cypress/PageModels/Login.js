@@ -26,7 +26,8 @@ const loginElements = {
    transactionalTableSelector:() => cy.get("#transactionsTable"),
    totalBalanceDivSelector: () => cy.get("#totalBalance"),
    creditAvailableSelector : () => cy.get("#creditAvailable"),
-   dueTodaySelector: () => cy.get(".balance")
+   dueTodaySelector: () => cy.get(".balance"), 
+   compareExpensesLink: () =>  cy.get("#showExpensesChart")
    
    
 
