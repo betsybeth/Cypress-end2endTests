@@ -21,6 +21,27 @@ describe("Table Sorting ", () => {
     })
 })
 
+describe("Canavas Tests", () => {
+    beforeEach(() => {
+        cy.visit("https://demo.applitools.com/hackathon.html")
+        loginElements.userNameInputElement().type("test")
+        loginElements.passwordInputElement().type("test")
+        loginElements.rememberLabelElement().click()
+        loginElements.loginButtonElement().click()
+
+    })
+    it("validate chart view", () => {
+         loginElements.compareExpensesLink().click()
+         cy.request({
+            url: 'https://demo.applitools.com/hackathonChart.html',
+            followRedirect: true
+        }).then((resp)  => {
+            expect(resp.status).to.eql(200)
+        })
+        //  Unable to test the canvas chart since the elements are not available in the DOM.
+    })
+})
+
 describe("Dynamic Content Test", () => {
     beforeEach(() => {
         cy.visit("https://demo.applitools.com/hackathon.html")
