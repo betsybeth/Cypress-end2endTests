@@ -15,12 +15,26 @@ describe("Table Sorting ", () => {
           loginElements.transactionalTableSelector().within(() => {
               cy.get("tr").should("have.length", 7)
               loginElements.amountHeaderSelector().click()
-              cy.get("tbody > :nth-child(1)").should("be.visible")
-              
+              cy.get("tbody > :nth-child(1)").should("be.visible") 
           })
-
-          
-               
+                    
     })
-
 })
+
+describe("Dynamic Content Test", () => {
+    beforeEach(() => {
+        cy.visit("https://demo.applitools.com/hackathon.html")
+        loginElements.userNameInputElement().type("test")
+        loginElements.passwordInputElement().type("test")
+        loginElements.rememberLabelElement().click()
+        loginElements.loginButtonElement().click()
+
+    })
+    it("validate Adverts are displayed" , () => {
+        loginElements.totalBalanceDivSelector().should("be.visible")
+        loginElements.creditAvailableSelector().should("be.visible")
+        loginElements.dueTodaySelector().should("be.visible")
+       
+    })
+})
+
