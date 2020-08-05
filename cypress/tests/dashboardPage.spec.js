@@ -17,6 +17,12 @@ describe("Table Sorting ", () => {
               loginElements.amountHeaderSelector().click()
               cy.get("tbody > :nth-child(1)").should("be.visible") 
           })
+          loginElements.shopifyDescriptionSelector().should("be.visible")
+          loginElements.ebayDescriptionSelector().should("be.visible")
+          loginElements.stripeDescriptionSelector().should("be.visible")
+          loginElements.mailChimpDescriptionSelector().should("be.visible")
+          loginElements.templatesDescriptionSelector().should("be.visible")
+          loginElements.startBucksDescriptionSelector().should("be.visible")
                     
     })
 })
